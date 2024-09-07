@@ -48,6 +48,9 @@ void CropField::notify() {
 void CropField::add(FarmUnit *unit) {
 
 }
+void CropField::remove(FarmUnit *unit) {
+
+}
 
 FarmUnit *CropField::getChild(int index) {
     return nullptr;

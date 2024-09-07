@@ -32,7 +32,7 @@ public:
    void detach(TruckObserver* observer);
    void notify();
    void add (FarmUnit* unit);
-    //void remove (FarmUnit* unit);
+    void remove (FarmUnit* unit);
     FarmUnit* getChild(int index);
     std::string getName();
     std::vector<FarmUnit*> getUnits();
