@@ -3,10 +3,13 @@
 #define PRAC_4_DEPHTFIRSTITERATOR_H
 
 #include "FarmUnit.h"
+#include <stack>
 class DephtFirstIterator {
 private:
-  //  stack<FarmUnit*> stack;
-    DephtFirstIterator(FarmUnit* root);
+    std::stack<FarmUnit*> farmStack;
+    FarmUnit* current;
+public:
+  DephtFirstIterator(FarmUnit* root);
   FarmUnit* firstFarm();
   FarmUnit* next();
   bool isDone();

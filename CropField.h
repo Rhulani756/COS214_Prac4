@@ -3,39 +3,43 @@
 #ifndef PRAC_4_CROPFIELD_H
 #define PRAC_4_CROPFIELD_H
 
-#include <iostream>
-#include <vector>
+
 #include "FarmUnit.h"
 #include "SoilState.h"
 #include "TruckObserver.h"
-class CropField {
+#include <string>
+#include <vector>
+class CropField :FarmUnit{
 private:
     std::string cropType;
 int storageCapacity;
 int amountStored;
 SoilState* soilState;
 int baseYield;
-std::vector<TruckObserver*> observer;
+std::vector<TruckObserver*> observers;
 std::vector<FarmUnit*> units;
 
 
 public:
-   CropField();
-   int getTotalCapacity();
-   std::string getCropType();
-   std::string getSoilTypeName();
-   int harvest();
-   void rain();
-   int getLeftOverCapacity();
-   void increaseProduction();
+   CropField(std::string crop, int capacity, SoilState* initialState);
+   int getTotalCapacity() override;
+   std::string getCropType() override;
+    std::string getSoilStateName() override;
+    virtual int harvest() = 0;
+    virtual void rain() = 0;
+    virtual int getLeftOverCapacity() = 0;
+    virtual void increaseProduction() = 0;
    void attach(TruckObserver* observer);
    void detach(TruckObserver* observer);
    void notify();
-   void add (FarmUnit* unit);
-    void remove (FarmUnit* unit);
-    FarmUnit* getChild(int index);
-    std::string getName();
+   void add (FarmUnit* unit) override;
+    void remove (FarmUnit* unit) override;
+    FarmUnit* getChild(int index) override;
+    std::string getName() override;  // Declare getName()
     std::vector<FarmUnit*> getUnits();
+
+    SoilState* getSoilState() const;
+
     ~CropField();
 };
 

@@ -1,26 +1,26 @@
-
 #include "FertilizerDecorator.h"
 
-FertilizerDecorator::FertilizerDecorator(CropField *field, int capacity) {
-
-}
-
+// Harvest crops with increased production due to fertilizer
 int FertilizerDecorator::harvest() {
-    return 0;
+    return wrappedField->harvest();  // Delegate to the wrapped field
 }
 
+// Handle rain, possibly transitioning the soil state
 void FertilizerDecorator::rain() {
-
+    wrappedField->rain();  // Delegate to the wrapped field
 }
 
-int FertilizerDecorator::increaseProduct() {
-    return 0;
+// Increase production (correct method name)
+void FertilizerDecorator::increaseProduction() {
+    wrappedField->increaseProduction();  // Increase production on the wrapped field
 }
 
+// Return the remaining capacity in the crop field
 int FertilizerDecorator::getLeftOverCapacity() {
-    return 0;
+    return wrappedField->getLeftOverCapacity();  // Delegate to the wrapped field
 }
 
+// Destructor implementation
 FertilizerDecorator::~FertilizerDecorator() {
-
+    // Destructor logic if needed, wrappedField is handled elsewhere
 }

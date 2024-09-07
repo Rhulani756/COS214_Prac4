@@ -1,26 +1,12 @@
-
+// Iterator.cpp
 #include "Iterator.h"
 
+// Constructor
 Iterator::Iterator() {
-
+    // Constructor logic (if any)
 }
 
-FarmUnit *Iterator::firstFarm() {
-    return nullptr;
-}
-
-FarmUnit *Iterator::next() {
-    return nullptr;
-}
-
-bool Iterator::isDone() {
-    return false;
-}
-
-FarmUnit *Iterator::currentFarm() {
-    return nullptr;
-}
-
+// Destructor
 Iterator::~Iterator() {
-
+    // Destructor logic (if any)
 }

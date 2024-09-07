@@ -1,27 +1,22 @@
 #include <iostream>
-#include "Barn.h"
-#include "BreadthFirstIterator.h"
-#include "CropField.h"
-#include "CropFieldDecorator.h"
-#include "DeliveryTruck.h"
-#include "DephtFirstIterator.h"
-#include "DrySoil.h"
-#include "ExtraBarnDecorator.h"
-#include "FarmUnit.h"
-#include "FarmTraversalContext.h"
-#include "FertilizerTruck.h"
-#include "FertilizerDecorator.h"
-#include "FloodedSoil.h"
-#include "FruitfulSoil.h"
-#include "Iterator.h"
-#include "SoilState.h"
-#include "TruckObserver.h"
-#include "TraversalContext.h"
-#include "TruckLogisticsManager.h"
 
-int main()
-{
-    std::cout<<"Hello World";
+// Include all necessary headers
+#include "FarmUnit.h"
+#include "CropField.h"
+
+#include "DrySoil.h"
+#include "FruitfulSoil.h"
+#include "FloodedSoil.h"
+#include "FertilizerTruck.h"
+#include "TruckLogisticsManager.h"
+#include "BreadthFirstIterator.h"
+#include "FarmTraversalContext.h"
+
+int main() {
+    // Output "Hello, World!" to confirm the program is running
+    std::cout << "Hello, World!" << std::endl;
+
+    // You can add more code here for testing purposes, if needed.
 
     return 0;
 }

@@ -3,11 +3,13 @@
 #define PRAC_4_SOILSTATE_H
 
 #include <iostream>
+#include <string>
 class SoilState {
 public:
-    int harvestCrops(int baseYiled);
-    SoilState* rain();
-    std::string getName();
+ virtual  int harvestCrops(int baseYiled) = 0;
+ virtual   SoilState* rain() = 0;
+ virtual  std::string getName() = 0;
+ virtual ~SoilState() = default;
 };
 
 

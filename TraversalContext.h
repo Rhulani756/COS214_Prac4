@@ -4,11 +4,14 @@
 #define PRAC_4_TRAVERSALCONTEXT_H
 
 #include "Iterator.h"
-class TraversalContext : public Iterator{
+class TraversalContext{
+private:
+    Iterator* iterator;
 public:
-    void setTraversalStrategy(Iterator* newIterator);
-    void traverseFarms();
-    ~TraversalContext();
+    TraversalContext();  // Constructor
+    void setTraversalStrategy(Iterator* newIterator);  // Set a new traversal strategy
+    void traverseFarms();  // Traverse farms using the current strategy
+    ~TraversalContext();  // Destructor
 };
 
 

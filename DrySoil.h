@@ -3,11 +3,11 @@
 #define PRAC_4_DRYSOIL_H
 
 #include "SoilState.h"
-class DrySoil {
+class DrySoil: public SoilState {
 public:
-    int harvestCrops(int baseYield);
-    SoilState* rain();
-    std::string getName();
+    int harvestCrops(int baseYield) override;
+    SoilState* rain() override;
+    std::string getName() override;
 };
 
 
