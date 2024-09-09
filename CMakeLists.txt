@@ -1,11 +1,11 @@
-cmake_minimum_required(VERSION 3.27)
-project(Prac_4)
+cmake_minimum_required(VERSION 3.10)
+project(Practical_4)
 
 set(CMAKE_CXX_STANDARD 14)
 
 include_directories(.)
 
-add_executable(Prac_4
+add_executable(Practical_4
         Barn.cpp
         Barn.h
         BreadthFirstIterator.cpp
@@ -36,7 +36,7 @@ add_executable(Prac_4
         FruitfulSoil.h
         Iterator.cpp
         Iterator.h
-        Main.cpp
+        main.cpp
         SoilState.cpp
         SoilState.h
         TraversalContext.cpp

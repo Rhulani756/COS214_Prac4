@@ -12,8 +12,8 @@ public:
     std::string getCropType() override;
     std::string getSoilStateName() override;
     int getTotalCapacity() override;
-    int getLeftOverCapacity() override;
-    void increaseProduction() override;
+    int getLeftOverCapacity() ;
+    void increaseProduction() ;
     int getChildCount() override {
         return 0;  // CropFieldDecorator does not add child units
     }

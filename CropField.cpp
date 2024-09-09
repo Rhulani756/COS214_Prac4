@@ -1,10 +1,11 @@
-// CropField.cpp
 #include "CropField.h"
 #include <algorithm>
 
+// Constructor
 CropField::CropField(std::string crop, int capacity, SoilState* initialState)
         : cropType(crop), storageCapacity(capacity), amountStored(0), soilState(initialState), baseYield(10) {}
 
+// Override pure virtual methods
 int CropField::getTotalCapacity() {
     return storageCapacity;  // Return the total storage capacity of the field
 }
@@ -53,23 +54,27 @@ void CropField::notify() {
 }
 
 void CropField::add(FarmUnit* unit) {
-    // No implementation needed as CropField is a leaf node in the farm structure
+    // CropField is a leaf node in the farm structure, so this method is not used
 }
 
 void CropField::remove(FarmUnit* unit) {
-    // No implementation needed as CropField is a leaf node in the farm structure
+    // CropField is a leaf node in the farm structure, so this method is not used
 }
 
 FarmUnit* CropField::getChild(int index) {
     return nullptr;  // CropField has no child units
 }
-SoilState* CropField::getSoilState() const {
-    return soilState;
-}
 
 std::string CropField::getName() {
     return "CropField";  // Return a meaningful name or field-specific name
 }
-CropField::~CropField() {
-    delete soilState;  // Clean up the soil state upon destruction
+
+SoilState* CropField::getSoilState() const {
+    return soilState;
 }
+
+// Destructor
+CropField::~CropField() {
+   // delete soilState // Clean up the soil state upon destruction
+}
+;

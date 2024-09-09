@@ -11,14 +11,14 @@ public:
 
     // Override methods from CropField
     int harvest() override;
-    void rain() override;
+    void rain() ;
 
     // Corrected the method name to match the one in the truck class
-    void increaseProduction() override;
-    int getChildCount() override {
+    void increaseProduction() ;
+    int getChildCount() {
         return 0;  // FertilizerDecorator does not add child units
     }
-    int getLeftOverCapacity() override;
+    int getLeftOverCapacity() ;
 
     ~FertilizerDecorator() override;
 };
