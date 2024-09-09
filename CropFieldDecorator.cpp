@@ -20,14 +20,6 @@ int CropFieldDecorator::harvest() {
     return wrappedField->harvest();
 }
 
-int CropFieldDecorator::getLeftOverCapacity() {
-    return wrappedField->getLeftOverCapacity();
-}
-
-void CropFieldDecorator::increaseProduction() {
-    wrappedField->increaseProduction();
-}
-
 CropFieldDecorator::~CropFieldDecorator() {
-    delete wrappedField;  // Clean up the wrapped field
+    //delete wrappedField;  // Clean up the wrapped field
 }

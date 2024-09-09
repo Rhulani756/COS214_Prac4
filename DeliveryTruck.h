@@ -6,6 +6,7 @@
 #include "CropField.h"
 class DeliveryTruck {
 public:
+    DeliveryTruck();
     void update(CropField* field);
     void startEngine();
     ~DeliveryTruck();

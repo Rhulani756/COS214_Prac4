@@ -1,6 +1,9 @@
 #include "FertilizerTruck.h"
 #include "FertilizerDecorator.h"  // Include FertilizerDecorator to use it
 #include <iostream>
+FertilizerTruck::FertilizerTruck() {
+    //Constructor
+}
 
 void FertilizerTruck::update(CropField* field) {
     // Check if the crop field has dry soil and needs fertilization

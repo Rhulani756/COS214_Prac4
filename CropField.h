@@ -15,19 +15,18 @@ private:
     SoilState* soilState;
     int baseYield;
     std::vector<TruckObserver*> observers;
+    std::vector<FarmUnit*> units;
 
 public:
     // Constructor to initialize the CropField with crop type, capacity, and initial soil state
     CropField(std::string crop, int capacity, SoilState* initialState);
 
     // Override pure virtual methods from FarmUnit
-    int getTotalCapacity() override;
-    std::string getCropType() override;
-    std::string getSoilStateName() override;
-    int harvest() override;
+    virtual int getTotalCapacity();
+    std::string getCropType();
+    std::string getSoilStateName();
+    virtual int harvest();
     void rain();  // Not virtual because CropField doesn't need further specialization
-    int getLeftOverCapacity() ;
-    void increaseProduction() ;
 
     // Observer pattern methods for truck notifications
     void attach(TruckObserver* observer);
@@ -38,11 +37,12 @@ public:
     void add(FarmUnit* unit) override;
     void remove(FarmUnit* unit) override;
     FarmUnit* getChild(int index) override;
-    int getChildCount() override { return 0; }  // CropField has no children
-
     std::string getName() override;  // Return the name of this unit (e.g., "CropField")
 
     SoilState* getSoilState() const;
+
+    int getBaseYield();
+    void setBaseYield(int yield);
 
     // Destructor to clean up resources
     ~CropField();

@@ -1,7 +1,6 @@
-// BreadthFirstIterator.cpp
 #include "BreadthFirstIterator.h"
 
-BreadthFirstIterator::BreadthFirstIterator(FarmUnit* root) {
+BreadthFirstIterator::BreadthFirstIterator(FarmUnit* root) : current(nullptr) {
     if (root) {
         farmQueue.push(root);  // Initialize the queue with the root farm unit
     }
@@ -9,8 +8,8 @@ BreadthFirstIterator::BreadthFirstIterator(FarmUnit* root) {
 
 FarmUnit* BreadthFirstIterator::firstFarm() {
     if (!farmQueue.empty()) {
-        current = farmQueue.front();
-        farmQueue.pop();  // Remove the first farm unit from the queue
+        current = farmQueue.front();  // Get the first farm unit in the queue
+        farmQueue.pop();  // Remove it from the queue
         return current;
     }
     return nullptr;
@@ -22,8 +21,8 @@ FarmUnit* BreadthFirstIterator::next() {
         farmQueue.pop();  // Remove it from the queue
 
         // Add all child farm units to the queue
-        for (int k = 0; k < current->getChildCount(); k++) {
-            farmQueue.push(current->getChild(k));
+        for (int i = 0; i < current->getChildCount(); i++) {
+            farmQueue.push(current->getChild(i));
         }
 
         return current;
@@ -32,9 +31,9 @@ FarmUnit* BreadthFirstIterator::next() {
 }
 
 bool BreadthFirstIterator::isDone() {
-    return farmQueue.empty();
+    return farmQueue.empty();  // Traversal is done if the queue is empty
 }
 
 FarmUnit* BreadthFirstIterator::currentFarm() {
-    return current;
+    return current;  // Return the current farm being visited
 }

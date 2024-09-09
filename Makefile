@@ -1,5 +1,3 @@
-# Makefile for Hello World C++ project
-
 # Compiler and flags
 CXX = g++
 CXXFLAGS = -Wall -g
@@ -8,7 +6,10 @@ CXXFLAGS = -Wall -g
 TARGET = main
 
 # Source files
-SRC = main.cpp
+SRC = main.cpp Barn.cpp BreadthFirstIterator.cpp CropField.cpp CropFieldDecorator.cpp DeliveryTruck.cpp \
+      DephtFirstIterator.cpp DrySoil.cpp ExtraBarnDecorator.cpp FarmTraversalContext.cpp FertilizerDecorator.cpp \
+      FertilizerTruck.cpp FloodedSoil.cpp FruitfulSoil.cpp Iterator.cpp SoilState.cpp TraversalContext.cpp \
+      TruckLogisticsManager.cpp TruckObserver.cpp FarmUnit.cpp
 
 # Object files
 OBJ = $(SRC:.cpp=.o)

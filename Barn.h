@@ -5,7 +5,8 @@
 
 class Barn : public FarmUnit {
 private:
-    int storageCapacity;  // Storage capacity provided by the barn
+    int storageCapacity;
+    std::string cropType;// Storage capacity provided by the barn
 
 public:
     // Constructor to initialize Barn with a specific capacity
@@ -15,13 +16,9 @@ public:
     void add(FarmUnit* unit) override;
     void remove(FarmUnit* unit) override;
     FarmUnit* getChild(int index) override;
-    int getChildCount() override;
     std::string getName() override;
-    int getTotalCapacity() override;
-    std::string getCropType() override;
-    std::string getSoilStateName() override;
-    int harvest() override;
-
+    int getTotalCapacity();
+    std::string getCropType();
     // Destructor
     ~Barn() override;
 };

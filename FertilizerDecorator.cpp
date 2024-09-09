@@ -12,12 +12,7 @@ void FertilizerDecorator::rain() {
 
 // Increase production (correct method name)
 void FertilizerDecorator::increaseProduction() {
-    wrappedField->increaseProduction();  // Increase production on the wrapped field
-}
-
-// Return the remaining capacity in the crop field
-int FertilizerDecorator::getLeftOverCapacity() {
-    return wrappedField->getLeftOverCapacity();  // Delegate to the wrapped field
+    wrappedField->setBaseYield(getBaseYield());
 }
 
 // Destructor implementation

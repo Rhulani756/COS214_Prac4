@@ -9,15 +9,12 @@ protected:
 public:
     CropFieldDecorator(CropField* field);
     int harvest() override;
-    std::string getCropType() override;
-    std::string getSoilStateName() override;
     int getTotalCapacity() override;
-    int getLeftOverCapacity() ;
-    void increaseProduction() ;
-    int getChildCount() override {
-        return 0;  // CropFieldDecorator does not add child units
-    }
-    ~CropFieldDecorator() override;
+    virtual ~CropFieldDecorator() = 0;
+
+    std::string getCropType();
+
+    std::string getSoilStateName();
 };
 
 

@@ -2,44 +2,42 @@
 #include <stdexcept>
 #include <sstream>
 
-Barn::Barn(int capacity) : storageCapacity(capacity) {}
+// Constructor that initializes the barn with a storage capacity
+Barn::Barn(int capacity) : storageCapacity(capacity) {
+    cropType = "Unknown";  // Default crop type is "Unknown"
+}
 
+// Adding units to the Barn is not supported, so we throw an exception
 void Barn::add(FarmUnit* unit) {
     throw std::logic_error("Barn does not support adding units.");
 }
 
+// Removing units from the Barn is not supported, so we throw an exception
 void Barn::remove(FarmUnit* unit) {
     throw std::logic_error("Barn does not support removing units.");
 }
 
+// Barn does not have children, so we throw an exception for this method
 FarmUnit* Barn::getChild(int index) {
     throw std::out_of_range("Barn does not have children.");
 }
 
-int Barn::getChildCount() {
-    return 0;  // Barn does not have children
-}
-
+// Returns the name of this unit
 std::string Barn::getName() {
     return "Barn";
 }
 
+// Returns the total storage capacity of the barn
 int Barn::getTotalCapacity() {
     return storageCapacity;
 }
 
+// Returns the type of crop stored in the barn
 std::string Barn::getCropType() {
-    return "None";  // Assuming Barn does not store crops
+    return cropType;
 }
 
-std::string Barn::getSoilStateName() {
-    return "Unknown";  // Assuming Barn does not handle soil
-}
-
-int Barn::harvest() {
-    return 0;  // Assuming no crops are harvested from Barn
-}
-
+// Destructor, no specific cleanup needed in this case
 Barn::~Barn() {
-    // Cleanup if necessary
+    // Cleanup logic if necessary
 }

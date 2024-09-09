@@ -1,10 +1,12 @@
 // DeliveryTruck.cpp
 #include "DeliveryTruck.h"
 #include <iostream>
-
+DeliveryTruck::DeliveryTruck() {
+    //Constructor
+}
 void DeliveryTruck::update(CropField* field) {
     // Check if the crop field is nearing capacity and trigger the delivery
-    if (field->getLeftOverCapacity() <= 20) {  // Example threshold for full capacity
+    if (field) {  // Example threshold for full capacity
         std::cout << "Storage almost full. Dispatching delivery truck to collect crops from field: "
                   << field->getCropType() << std::endl;
         startEngine();  // Start the delivery operation

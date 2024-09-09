@@ -9,6 +9,7 @@ class TruckLogisticsManager {
 private:
     std::vector<TruckObserver*> trucks;
 public:
+    TruckLogisticsManager();
     void buyTruck(TruckObserver* truck);
     void sellTruck(TruckObserver* truck);
     void callTruck(TruckObserver* truck, CropField* field);
